@@ -122,37 +122,63 @@
   </header>
 
   <nav>
-    <ul>
-      <li><a href="#">Beranda</a></li>
-      <li><a href="#">Nasional</a></li>
-      <li><a href="#">Internasional</a></li>
-      <li><a href="#">Teknologi</a></li>
-    </ul>
-  </nav>
+      <ul>
+        <li><a href="#" data-target="beranda">Beranda</a></li>
+        <li><a href="#" data-target="nasional">Nasional</a></li>
+        <li><a href="#" data-target="internasional">Internasional</a></li>
+        <li><a href="#" data-target="teknologi">Teknologi</a></li>
+        <li><a href="#" data-target="olahraga">Olahraga</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <div class="container">
-    <div class="berita">
-      <div class="artikel">
-        <img src="https://via.placeholder.com/600x300" alt="Berita 1">
-        <h3>Judul Berita 1</h3>
-        <p>Isi berita singkat tentang kejadian terbaru yang sedang ramai dibicarakan.</p>
-      </div>
-      <div class="artikel">
-        <img src="https://via.placeholder.com/600x300" alt="Berita 2">
-        <h3>Judul Berita 2</h3>
-        <p>Informasi menarik seputar teknologi dan inovasi terbaru di dunia digital.</p>
-      </div>
-      <div class="artikel">
-        <img src="https://via.placeholder.com/600x300" alt="Berita 3">
-        <h3>Judul Berita 3</h3>
-        <p>Berita internasional mengenai peristiwa penting yang terjadi di luar negeri.</p>
-      </div>
-    </div>
-  </div>
+  <main>
+    <section id="beranda" class="artikel active">
+      <h2>Selamat Datang di Berita Terkini</h2>
+      <p>Ini adalah halaman utama yang menampilkan berita terbaru dan terpopuler.</p>
+    </section>
+
+    <section id="nasional" class="artikel">
+      <h2>Berita Nasional</h2>
+      <p>Berita dari seluruh penjuru Indonesia, dari Sabang sampai Merauke.</p>
+    </section>
+
+    <section id="internasional" class="artikel">
+      <h2>Berita Internasional</h2>
+      <p>Informasi terkini dari dunia internasional, termasuk politik dan ekonomi global.</p>
+    </section>
+
+    <section id="teknologi" class="artikel">
+      <h2>Berita Teknologi</h2>
+      <p>Update terbaru seputar teknologi, gadget, dan inovasi digital.</p>
+    </section>
+
+    <section id="olahraga" class="artikel">
+      <h2>Berita Olahraga</h2>
+      <p>Skor pertandingan, jadwal, dan kabar atlet dari berbagai cabang olahraga.</p>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 Berita Terkini. Semua hak dilindungi.</p>
   </footer>
 
+  <script>
+    const links = document.querySelectorAll("nav a");
+    const sections = document.querySelectorAll(".artikel");
+
+    links.forEach(link => {
+      link.addEventListener("click", function(e) {
+        e.preventDefault();
+        const target = this.getAttribute("data-target");
+
+        sections.forEach(section => {
+          section.classList.remove("active");
+        });
+
+        document.getElementById(target).classList.add("active");
+      });
+    });
+  </script>
 </body>
 </html>
