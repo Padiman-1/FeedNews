@@ -2,104 +2,123 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Berita Satu Halaman</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Berita Terkini</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      scroll-behavior: smooth;
+      padding: 0;
     }
 
     header {
-      background-color: #d32f2f;
+      background-color: #0077cc;
       color: white;
       padding: 20px;
       text-align: center;
     }
 
-    nav {
-      background-color: #b71c1c;
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
+      background-color: #005fa3;
     }
 
-    nav a {
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
       color: white;
-      padding: 15px 20px;
       text-decoration: none;
+      padding: 10px;
       display: block;
     }
 
-    nav a:hover {
-      background-color: #f44336;
+    nav ul li a:hover {
+      background-color: #004080;
     }
 
-    section {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
+    .artikel {
+      padding: 20px;
+      display: none;
     }
 
-    section h2 {
-      color: #d32f2f;
-      margin-bottom: 10px;
-    }
-
-    section p {
-      line-height: 1.6;
+    .active {
+      display: block;
     }
 
     footer {
-      background-color: #d32f2f;
-      color: white;
+      background-color: #eee;
       text-align: center;
-      padding: 20px;
-    }
-
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-      }
-
-      nav a {
-        text-align: center;
-      }
+      padding: 10px;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Portal Berita</h1>
-    <p>Informasi Terkini, Akurat, dan Terpercaya</p>
+    <h1>Berita Terkini</h1>
+    <nav>
+      <ul>
+        <li><a href="#" data-target="beranda">Beranda</a></li>
+        <li><a href="#" data-target="nasional">Nasional</a></li>
+        <li><a href="#" data-target="internasional">Internasional</a></li>
+        <li><a href="#" data-target="teknologi">Teknologi</a></li>
+        <li><a href="#" data-target="olahraga">Olahraga</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#berita1">Gempa Banyuwangi</a>
-    <a href="#berita2">Teknologi AI</a>
-    <a href="#berita3">Timnas Indonesia</a>
-  </nav>
+  <main>
+    <section id="beranda" class="artikel active">
+      <h2>Selamat Datang di Berita Terkini</h2>
+      <p>Ini adalah halaman utama yang menampilkan berita terbaru dan terpopuler.</p>
+    </section>
 
-  <section id="berita1">
-    <h2>Gempa Guncang Banyuwangi</h2>
-    <p>Gempa berkekuatan 6.2 SR mengguncang wilayah Banyuwangi dan sekitarnya pada Sabtu malam. Warga diminta tetap waspada terhadap kemungkinan gempa susulan.</p>
-  </section>
+    <section id="nasional" class="artikel">
+      <h2>Berita Nasional</h2>
+      <p>Berita dari seluruh penjuru Indonesia, dari Sabang sampai Merauke.</p>
+    </section>
 
-  <section id="berita2">
-    <h2>Teknologi AI Semakin Canggih</h2>
-    <p>Perusahaan teknologi global berlomba mengembangkan kecerdasan buatan yang mampu memahami emosi manusia. Tahun 2025 diprediksi menjadi era revolusi AI.</p>
-  </section>
+    <section id="internasional" class="artikel">
+      <h2>Berita Internasional</h2>
+      <p>Informasi terkini dari dunia internasional, termasuk politik dan ekonomi global.</p>
+    </section>
 
-  <section id="berita3">
-    <h2>Timnas Indonesia Menang Telak</h2>
-    <p>Timnas Indonesia berhasil mengalahkan Vietnam dengan skor 4-0 dalam laga persahabatan. Pelatih memuji kerja sama tim dan semangat juang para pemain.</p>
-  </section>
+    <section id="teknologi" class="artikel">
+      <h2>Berita Teknologi</h2>
+      <p>Update terbaru seputar teknologi, gadget, dan inovasi digital.</p>
+    </section>
+
+    <section id="olahraga" class="artikel">
+      <h2>Berita Olahraga</h2>
+      <p>Skor pertandingan, jadwal, dan kabar atlet dari berbagai cabang olahraga.</p>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Portal Berita. Semua hak dilindungi.</p>
+    <p>&copy; 2025 Berita Terkini. Semua hak dilindungi.</p>
   </footer>
 
+  <script>
+    const links = document.querySelectorAll("nav a");
+    const sections = document.querySelectorAll(".artikel");
+
+    links.forEach(link => {
+      link.addEventListener("click", function(e) {
+        e.preventDefault();
+        const target = this.getAttribute("data-target");
+
+        sections.forEach(section => {
+          section.classList.remove("active");
+        });
+
+        document.getElementById(target).classList.add("active");
+      });
+    });
+  </script>
 </body>
 </html>
