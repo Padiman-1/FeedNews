@@ -6,43 +6,69 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background-color: #f4f4f4;
   color: #333;
-  padding: 20px;
+  padding: 0;
 }
 
-/* Header dan navigasi */
+/* Header */
 header {
-  margin-bottom: 20px;
+  background-color: #007BFF;
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
 
+header h1 {
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+
+header p {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+/* Navigasi */
 nav ul {
   list-style: none;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  padding: 10px 0;
 }
 
 nav a {
   text-decoration: none;
-  color: #007BFF;
-  padding: 8px 12px;
+  color: white;
+  background-color: #0056b3;
+  padding: 8px 16px;
   border-radius: 4px;
   transition: background 0.3s;
 }
 
 nav a:hover {
-  background-color: #e0e0e0;
+  background-color: #003d80;
 }
 
 /* Konten utama */
 main {
-  margin-top: 10px;
+  padding: 20px;
+  text-align: center;
 }
 
-/* Responsif untuk layar kecil */
+/* Footer */
+footer {
+  background-color: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  font-size: 0.9em;
+}
+
+/* Responsif */
 @media (max-width: 600px) {
   nav ul {
     flex-direction: column;
@@ -51,5 +77,6 @@ main {
   nav a {
     display: block;
     width: 100%;
+    text-align: center;
   }
 }
