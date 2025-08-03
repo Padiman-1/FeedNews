@@ -3,72 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PadimaNews</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background-color: #f4f4f4;
-    }
-
-    .berita {
-      background-color: white;
-      border-radius: 8px;
-      padding: 15px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .judul {
-      font-size: 18px;
-      font-weight: bold;
-      color: #000000;
-      cursor: pointer;
-      margin-bottom: 10px;
-    }
-
-    .isi {
-      display: none;
-      font-size: 14px;
-      line-height: 1.6;
-      color: #110f0f;
-    }
-  </style>
+  <title>Beranda</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <header>
-    <h1>PADIMANEWS INFORMATION</h1>
-    <p>Selamat datang di PadimaNews, Cerita? Berita? Jelas ada..!!</p>
-    <p>Dibuat oleh Hafeed pada tahun 2025</p>
+    <h1>Website Simpel</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="about.html">Tentang</a></li>
+        <li><a href="contact.html">Kontak</a></li>
+      </ul>
+    </nav>
   </header>
-  
-  <div class="berita">
-    <div class="judul" onclick="toggleIsi(this)">TREND 1 AGUSTUS</div>
-    <div class="isi">
-      Siapasih yang ga muak sama trend ini..., apalagi teruntuk para jomblo nihhh, aduhh sakit hati aku wakk. Tapi tenanggg... teruntuk kamu para jomblo selamat kamu adalah orang yang beruntung karena orang yang membuat trend begini tuh akan mendapatkan siksa 70x lipat dasyatnyaa, ihh seremkann....
-    </div>
-  </div>
 
-  <div class="berita">
-    <div class="judul" onclick="toggleIsi(this)">HUBUNGAN TANPA STATUS</div>
-    <div class="isi">
-      Telah terjadi tawuran antar sekolah yang di akibatkan kekesalan karena pasangan hts nya di ambil oleh teman seangkatannya, yang membuat lelaki dari pasangan hts tersebut meninggal karena di tendang bagian kepala berkali kali.
-    </div>
-  </div>
-
-<footer>
-    <p>&copy; 2025 PadimaNews. Terimakasih sudah membaca.</p>
-  </footer>
-
-  <script>
-    function toggleIsi(element) {
-      const isi = element.nextElementSibling;
-      isi.style.display = (isi.style.display === "none" || isi.style.display === "") ? "block" : "none";
-    }
-  </script>
-
+  <main>
+    <h2>Selamat Datang</h2>
+    <p>Ini adalah halaman utama yang responsif dan sederhana.</p>
+  </main>
 </body>
 </html>
-
-
