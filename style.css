@@ -1,57 +1,55 @@
-body {
-  font-family: Arial, sans-serif;
+/* Reset dasar */
+* {
   margin: 0;
   padding: 0;
-  background: #f4f4f4;
-  color: #333;
+  box-sizing: border-box;
 }
 
-header {
-  background: #d62828;
-  color: white;
+body {
+  font-family: sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
   padding: 20px;
-  text-align: center;
+}
+
+/* Header dan navigasi */
+header {
+  margin-bottom: 20px;
 }
 
 nav ul {
   list-style: none;
-  padding: 0;
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 0;
 }
 
 nav a {
-  color: white;
   text-decoration: none;
-  font-weight: bold;
+  color: #007BFF;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.3s;
 }
 
+nav a:hover {
+  background-color: #e0e0e0;
+}
+
+/* Konten utama */
 main {
-  padding: 20px;
+  margin-top: 10px;
 }
 
-.artikel {
-  background: white;
-  margin-bottom: 20px;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+/* Responsif untuk layar kecil */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+  }
 
-.artikel h2 {
-  margin-top: 0;
-}
-
-.artikel a {
-  color: #d62828;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-footer {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 15px;
+  nav a {
+    display: block;
+    width: 100%;
+  }
 }
